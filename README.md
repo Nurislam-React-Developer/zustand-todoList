@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zustand Todo List
 
-## Getting Started
+Это проект на базе [Next.js](https://nextjs.org), созданный с помощью [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). Приложение представляет собой список задач (Todo List) с использованием библиотеки [Zustand](https://github.com/pmndrs/zustand) для управления состоянием.
 
-First, run the development server:
+## Функциональность
 
+- Добавление новых задач.
+- Редактирование существующих задач.
+- Удаление задач.
+- Управление состоянием с помощью Zustand.
+- Использование TailwindCSS для стилизации компонентов.
+
+## Структура проекта
+
+- **`src/app/page.tsx`**: Главная страница приложения, отображающая компонент `TodoList`.
+- **`src/components/TodoList.tsx`**: Основной компонент для отображения и управления списком задач.
+- **`src/store/`**: Хранилище Zustand для управления состоянием задач.
+
+## Установка и запуск
+
+### Установка зависимостей
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+# или
+yarn install
+# или
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Запуск в режиме разработки
+```bash
+npm run dev
+# или
+yarn dev
+# или
+pnpm dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере, чтобы увидеть приложение.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Сборка для продакшена
+```bash
+npm run build
+```
 
-## Learn More
+### Запуск собранного приложения
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Технологии
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**: Фреймворк для серверного рендеринга и создания React-приложений.
+- **React**: Библиотека для создания пользовательских интерфейсов.
+- **Zustand**: Легковесная библиотека для управления состоянием.
+- **TailwindCSS**: Утилитарный CSS-фреймворк для стилизации.
+- **TypeScript**: Статическая типизация для JavaScript.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Развертывание
 
-## Deploy on Vercel
+Приложение можно развернуть на платформе [Vercel](https://vercel.com). Ознакомьтесь с [документацией по развертыванию Next.js](https://nextjs.org/docs/app/building-your-application/deploying) для получения дополнительной информации.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Дополнительные ресурсы
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Документация Next.js](https://nextjs.org/docs)
+- [Руководство по Next.js](https://nextjs.org/learn)
+- [Репозиторий Zustand](https://github.com/pmndrs/zustand)
+- [Документация TailwindCSS](https://tailwindcss.com/docs)
+
+## Лицензия
+
+Этот проект является приватным и не предназначен для публичного использования.

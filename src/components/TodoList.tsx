@@ -3,6 +3,7 @@
 import React from 'react';
 import useTodoStore from '@/store/todoStore';
 import { useEffect, useState } from 'react';
+import Spinner from './Spinner';
 
 export default function TodoList() {
 	const { todos, fetchTodos, addTodo, deleteTodo, updateTodo, loading } =
@@ -47,7 +48,7 @@ export default function TodoList() {
 						➕
 					</button>
 				</div>
-				{loading && <p>Загрузка...</p>}
+				{loading && <Spinner/>}
 				<ul className='space-y-2'>
 					{todos.map((todo) => (
 						<li

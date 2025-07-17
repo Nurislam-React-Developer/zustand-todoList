@@ -32,19 +32,27 @@ const useTodoStore = create<TodoState>()(
 			},
 
 			addTodo: async (title: string) => {
+				set({ loading: true });
 				const res = await axios.post(API_URL, {
 					title,
 					completed: false,
 				});
-				set({ todos: [res.data, ...get().todos] });
+				set({ todos: [res.data, ...get().todos], loading: false });
 			},
 
 			deleteTodo: async (id: number) => {
-				await axios.delete(`${API_URL}/${id}`);
-				set({ todos: get().todos.filter((todo) => todo.id !== id) });
+				try {
+          set({ loading: true });
+					await axios.delete(`${API_URL}/${id}`);
+					set({ todos: get().todos.filter((todo) => todo.id !== id) , loading: false });
+				} catch (error) {
+					console.error(`Failed to delete todo with id ${id}:`, error);
+					alert('Ошибка при удалении задачи. Возможно, задача уже удалена.');
+				}
 			},
 
 			updateTodo: async (id: number, updatedTitle: string) => {
+        set({ loading: true });
 				const res = await axios.patch(`${API_URL}/${id}`, {
 					title: updatedTitle,
 				});
@@ -53,6 +61,7 @@ const useTodoStore = create<TodoState>()(
 					todos: get().todos.map((todo) =>
 						todo.id === id ? { ...todo, title: res.data.title } : todo
 					),
+          loading: false,
 				});
 			},
 		}),
